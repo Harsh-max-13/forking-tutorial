@@ -97,11 +97,11 @@ Grants read and write access for data editing and management.
 
 # Add a Source Datastore
 
-== A source datastore is a storage location used to connect to and access data from external
+==A source datastore is a storage location used to connect to and access data from external
 sources. BigQuery is an example of a source datastore, specifically a type of JDBC datastore
 that supports connectivity through the JDBC API. Configuring the JDBC datastore enables the
 Qualytics platform to access and perform operations on the data, thereby generating valuable
-insights. ==
+insights.==
 
 **Step 1:** Log in to your Qualytics account and click on the “Add Source Datastore” button
 located at the top-right corner of the interface.
