@@ -97,11 +97,87 @@ Grants read and write access for data editing and management.
 
 # Add a Source Datastore
 
-<mark>A source datastore is a storage location used to connect to and access data from external
+A source datastore is a storage location used to connect to and access data from external
 sources. BigQuery is an example of a source datastore, specifically a type of JDBC datastore
 that supports connectivity through the JDBC API. Configuring the JDBC datastore enables the
 Qualytics platform to access and perform operations on the data, thereby generating valuable
-insights.</mark>
+insights.
 
 **Step 1:** Log in to your Qualytics account and click on the “Add Source Datastore” button
 located at the top-right corner of the interface.
+
+![alt text](image15.png)
+
+**Step 2:** A model window- "Add Dstastore" will appear, providing you with the option to connect a datastore.
+
+![alt text](image1.png)
+
+| REF. | FIELDS | ACTIONS |
+|------|--------|---------|
+| 1️. | Name(Required) | Specify the name of the datastore (e.g. The specified name will appear on the datastore cards.)|
+| 2️. |Toggle Button |Toggle ON to reuse credentials from an existing connection, or toggle OFF to create a new source datastore from scratch.|
+| 3. |Connector(Required)| Select “BigQuery” from the dropdown list.|
+
+# Option I: Create a Source Datastore with a new Connection
+
+If the toggle for **“Use an existing connection”** is turned off, then this will prompt you to add
+and configure the source datastore from scratch without using existing connection details.
+
+**Step 1:** Select the **“BigQuery”** connector from the dropdown list and add connection details
+such as temp dataset ID, service account key, project ID, and dataset ID.
+
+![alt text](image12.png)
+
+**Step 2:** The configuration form will expand, requesting credential detail before establising the connection.
+
+![alt text](image17.png)
+
+| REF. | FIELDS | ACTIONS |
+|------|--------|---------|
+| 1. |Temp Dataset ID(Optional)| Enter a temporary Dataset ID for intermediate data storage during BigQuery operations.|
+| 2. |Service Account (Required)| Upload a JSON file that contains the credentials required for accessing BigQuery.|
+| 3. | Project ID (Required)| Enter the Project ID associated with the BigQuery.|
+| 4. |Dataset ID(Required)| Enter the Dataset ID (schema name) associated with the BigQuery.|
+| 5. |Teams(Required)| Select one or more teams from the dropdown to associate with this source datastore.|
+| 6. |Initial Cataloging(Optional)| Tick the checkbox to automatically perform catalog operation on the configured source datastore to gather data structures and corresponding metadata.|
+
+**Step 3:** After adding the source datastore details, click on the “Test Connection” button to check and verify its connection.
+
+![alt text](image21.png)
+
+If the credentials and provided details are verified, a success message will be displayed
+indicating that the connection has been verified.
+
+## Option II: Use an Existing Connection
+
+If the toggle for **“Use an existing connection”** is turned on, then this will prompt you to
+configure the source datastore using the existing connection details.
+
+**Step 1:** Select a **"connection"** to reuse existing credentials.
+
+![alt text](image19.png)
+
+**Note:** If you are using existing credentials, you can only edit the details such as **Project ID, Dataset ID, Teams,** and **Initiate Cataloging.**
+
+**Step 2:** Click on the **“Test Connection”** button to verify the existing connection details. If connection details are verified, a success message will be displayed.
+
+![alt text](image23.png)
+
+**NOTE:** Clicking on the **"Finish"** button will create the source datastore and bypass the **"enrichment datastore"** configuration step.
+
+**TIP:** It is recommended to click on the **"Next"** button, which will take you to the **"enrichment datastore"** configuration page.
+
+## Add Enrichment Datastore
+
+Once you have successfully tested and verified your source datastore connection, you have the
+option to add the enrichment datastore **(recommended)**. The enrichment datastore is used to
+store the analyzed results, including any anomalies and additional metadata in tables. This
+setup provides full visibility into your data quality, helping you manage and improve it effectively.
+
+**Step 1:** Whether you have added a source datastore by creating a new datastore connection or
+using an existing connection, click on the **“Next”** button to start adding the **“Enrichment Datastore”**
+
+![alt text](image6.png)
+
+**Step 2:** A modal window- **“Add Enrichment Datastore”** will appear, providing you with the
+options to configure to add an “enrichment datastore”.
