@@ -240,7 +240,7 @@ If the toggle for **“Use an existing enrichment datastore”** is turned on, y
 |------|--------|---------|
 | 1. | Prefix(Required) | Add a prefix name to uniquely identify tables/files when Qualytics writes metadata from the source datastore to your enrichment datastore.|
 | 2. |Toggle Button for existing enrichment datastore | Toggle ON to link the source datastore to an existing enrichment datastore.|
-| 3. | Enrichment Datastore Select an enrichment datastore from the dropdown list.|
+| 3. | Enrichment Datastore|  Select an enrichment datastore from the dropdown list.|
 
 **Step 2:** After selecting an existing **“enrichment datastore”** connection, you will view the
 following details related to the selected enrichment:
