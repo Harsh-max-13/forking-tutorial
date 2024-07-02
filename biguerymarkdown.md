@@ -68,4 +68,20 @@ Allows usage of the BigQuery Storage API for efficient retrieval of large data v
 provides capabilities to create and manage read sessions, facilitating large-scale data
 transfers.
 
+## Datastore BigQuery Privileges
 
+The following table outlines the privileges associated with BigQuery roles when configuring
+datastore connections in Qualytics:
+
+## Source Datastore Permissions (Read-Only)
+
+Provides read access to view table data and metadata.
+
+|REF| READ-ONLY PERMISSIONS| DESCRIPTION|
+|---|----------------------|------------|
+|1. |roles/bigquery.dataViewer| Allows viewing of datasets, tables, and their
+data.|
+|2. |roles/bigquery.jobUser| Enables running of jobs such as queries and
+data loading.|
+|3. | roles/bigquery.readSessionUser| Facilitates the creation of read sessions for
+efficient data retrieval|
