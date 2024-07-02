@@ -44,7 +44,7 @@ Click on the “Create dataset” to set up a new dataset.
 The dataset Info section contains the Dataset ID and other information related to the created
 dataset. This generated Dataset ID is used to configure the BigQuery datastore.
 
-##BigQuery Roles and Permissions
+## BigQuery Roles and Permissions
 
 This section explains the roles required for viewing, editing, and running jobs in BigQuery. To
 integrate BigQuery with Qualytics, you need specific roles and permissions.
