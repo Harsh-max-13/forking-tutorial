@@ -143,7 +143,7 @@ such as temp dataset ID, service account key, project ID, and dataset ID.
 
 **Step 3:** After adding the source datastore details, click on the “Test Connection” button to check and verify its connection.
 
-![alt text](image21.png)
+![alt text](image10.png)
 
 If the credentials and provided details are verified, a success message will be displayed
 indicating that the connection has been verified.
@@ -181,3 +181,196 @@ using an existing connection, click on the **“Next”** button to start adding
 
 **Step 2:** A modal window- **“Add Enrichment Datastore”** will appear, providing you with the
 options to configure to add an “enrichment datastore”.
+
+![alt text](image7.png)
+
+| REF. | FIELDS | ACTIONS |
+|------|--------|---------|
+| 1. | Prefix(Required) | Add a prefix name to uniquely identify tables/files when Qualytics writes metadata for your selected datastore.|
+| 2. | Toggle Button for existing enrichment datastore | Toggle ON to link the source datastore to an existing enrichment datastore, or toggle OFF to link it to a brand new enrichment datastore. |
+| 3. | Name(Required) Give a name for the enrichment datastore |
+| 4. | Toggle Button for using an existing connection | Toggle ON to reuse credentials from an existing connection, or toggle OFF to create a new enrichment from scratch. |
+| 5. |Connector(Required) | Select a datastore connector as **“BigQuery”** from the dropdown list.|
+
+## Option I: Create an Enrichment Datastore with a new Connection
+
+If the toggles for **“Use an existing enrichment datastore”** and **“Use an existing connection”**
+are turned off, then this will prompt you to add and configure the enrichment datastore from
+scratch without using an existing enrichment datastore and its connection details.
+
+**Step 1:** Add connection details for your selected “enrichment datastore” connector
+
+![alt text](image13.png)
+
+| REF. | FIELDS | ACTIONS |
+|------|--------|---------|
+| 1. | Temp Dataset | ID(Optional) Enter a temporary Dataset ID for intermediate data storage during BigQuery operations.|
+| 2. | Service Account | Key(Required) | Upload a JSON file that contains the credentials required for accessing BigQuery.|
+| 3. | Project ID(Required) | Enter the Project ID associated with the BigQuery.|
+| 4. | Dataset ID(Required) | Enter the Dataset ID (schema name) associated with the BigQuery.|
+| 5. Teams(Required) | Select one or more teams from the dropdown to associate with this source datastore.|
+
+**Step 2:** Click on the **“Test Connection”** button to verify the selected enrichment datastore
+connection. If the connection is verified, a flash message will indicate that the connection with
+the enrichment datastore has been successfully verified.
+
+![alt text](image21.png)
+
+**Step 3:** Click on the **“Finish”** button to complete the configuration process.
+
+![alt text](image16.png)
+
+When the configuration process is finished, a modal will display a **“success message”** indicating that **“your datastore has been successfully added”.**
+
+![alt text](image18.png)
+
+**Step 4:** Close the Success dialogue and the page will automatically redirect you to the **“Source Datastore Details“** page where you can perform data operations on your configured **“source datastore”.**
+
+![alt text](image3.png)
+
+## Option II: Use an Existing Connection
+
+If the toggle for **“Use an existing enrichment datastore”** is turned on, you will be prompted to configure the datastore using existing connection details.
+
+**Step 1:** Add a prefix name and select an existing enrichment datastore from the dropdown list.
+
+![alt text](image2.png)
+
+| REF. | FIELDS | ACTIONS |
+|------|--------|---------|
+| 1. | Prefix(Required) | Add a prefix name to uniquely identify tables/files when Qualytics writes metadata from the source datastore to your enrichment datastore.|
+| 2. |Toggle Button for existing enrichment datastore | Toggle ON to link the source datastore to an existing enrichment datastore.|
+| 3. | Enrichment Datastore Select an enrichment datastore from the dropdown list.|
+
+**Step 2:** After selecting an existing **“enrichment datastore”** connection, you will view the
+following details related to the selected enrichment:
+
+-  **Teams:** The team associated with managing the enrichment datastore is based on the role of **public** or private. Example- Marked as “Public” means that this datastore is accessible to all the users.
+
+- **Host:** This is the server address where the “BigQuery” instance is hosted. It is the endpoint used to connect to the BigQuery environment.
+
+-  **Database:** Refers to the specific database within the BigQuery environment where the data is stored.
+
+- **Schema:** The schema used in the enrichment datastore. The schema is a logical grouping of database objects (tables, views, etc.). Each schema belongs to a single database.
+
+![alt text](image14.png)
+
+**Step 3:** Click on the **“Finish”** button to complete the configuration process for the existing **“enrichment datastore”.**
+
+![alt text](image11.png)
+
+When the configuration process is finished, a modal will display a **“success message”** indicating that “your data has been successfully added”.
+
+![alt text](image22.png)
+
+Close the success message and you will be automatically redirected to the **“Source Datastore Details“** page where you can perform data operations on your configured **“source datastore”.**
+
+![alt text](image3.png)
+
+# API Payload Examples
+
+This section provides detailed examples of API payloads to guide you through the process of
+creating and managing datastores using Qualytics API. Each example includes endpoint details,
+sample payloads, and instructions on how to replace placeholder values with actual data
+relevant to your setup.
+
+## Creating a Source Datastore
+
+This section provides sample payloads for creating a BigQuery datastore. Replace the
+placeholder values with actual data relevant to your setup.
+
+Endpoint: /api/datastores (post)
+
+### Option I: Create a Source Datastore with a new Connection
+
+Use the API payload example to configure a new datastore using the Qualytics API endpoint.
+
+```
+{
+"name": "your_datastore_name",
+"teams": ["Public"],
+"database": "your_project_id",
+"schema": "your_dataset_id",
+"enrich_only": false,
+"trigger_catalog": true,
+"connection": {
+"name": "your_connection_name",
+"type": "bigquery",
+"password": "your_service_account_key"
+}
+}
+```
+
+### Option II: Create a Source Datastore with an existing Connection
+
+Use the API payload example to configure a source datastore with an existing connection using
+the Qualytics API endpoint.
+
+```
+{
+"name": "your_datastore_name",
+"teams": ["Public"],
+"database": "your_project_id",
+"schema": "your_dataset_id",
+"enrich_only": false,
+"trigger_catalog": true,
+"connection_id": connection-id
+}
+```
+
+## Creating an Enrichment Datastore
+
+This section provides sample payloads for creating an enrichment datastore. Replace the
+placeholder values with actual data relevant to your setup.
+
+Endpoint: /api/datastores (post)
+
+### Option I: Create an Enrichment Datastore with a new Connection
+
+This section provides payload examples for creating an enrichment datastore with a new
+connection. Replace the placeholder values with actual data relevant to your setup.
+
+```
+{
+"name": "your_datastore_name",
+"teams": ["Public"],
+"database": "your_project_id",
+"schema": "your_enrichment_dataset_id",
+"enrich_only": true,
+"connection": {
+"name": "your_connection_name",
+"type": "bigquery",
+"password": "your_service_account_key"
+}
+}
+```
+
+### Option II: Create an Enrichment Datastore with an Existing Connection
+
+This section provides payload examples for creating an enrichment datastore with an existing
+connection. Replace the placeholder values with actual data relevant to your setup.
+
+```
+{
+"name": "your_datastore_name",
+"teams": ["Public"],
+"database": "your_project_id",
+"schema": "your_enrichment_dataset_id",
+"enrich_only": true,
+"connection_id": connection-id
+}
+```
+
+## Link an Enrichment Datastore to a Source Datastore
+
+Use the provided endpoint to link an enrichment datastore to a source datastore:
+
+**Endpoint Details:**
+
+```
+/api/datastores/{datastore-id}/enrichment/{enrichment-id} (patch)
+```
+
+
+
+
