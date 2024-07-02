@@ -77,8 +77,31 @@ datastore connections in Qualytics:
 
 Provides read access to view table data and metadata.
 
+
 |REF| READ-ONLY PERMISSIONS| DESCRIPTION|
 |---|----------------------|------------|
 |1. |roles/bigquery.dataViewer| Allows viewing of datasets, tables, and their data.|
 |2. |roles/bigquery.jobUser| Enables running of jobs such as queries and data loading.|
 |3. | roles/bigquery.readSessionUser| Facilitates the creation of read sessions for efficient data retrieval|
+
+## Enrichment Datastore Permissions (Read-Write)
+
+Grants read and write access for data editing and management.
+
+|REF| WRITE-ONLY PERMISSIONS| DESCRIPTION|
+|---|-----------------------|------------|
+|4. |roles/bigquery.dataEditor |Provides editing permissions for table data and schemas.|
+|5. |roles/bigquery.dataViewer |Allows viewing of datasets, tables, and their data.|
+|6. |roles/bigquery.jobUser |Enables running of jobs such as queries and data loading.|
+|7. |roles/bigquery.readSessionUser |Facilitates the creation of read sessions for efficient data retrieval.|
+
+# Add a Source Datastore
+
+== A source datastore is a storage location used to connect to and access data from external
+sources. BigQuery is an example of a source datastore, specifically a type of JDBC datastore
+that supports connectivity through the JDBC API. Configuring the JDBC datastore enables the
+Qualytics platform to access and perform operations on the data, thereby generating valuable
+insights. ==
+
+**Step 1:** Log in to your Qualytics account and click on the “Add Source Datastore” button
+located at the top-right corner of the interface.
