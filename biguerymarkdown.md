@@ -188,7 +188,7 @@ options to configure to add an “enrichment datastore”.
 |------|--------|---------|
 | 1. | Prefix(Required) | Add a prefix name to uniquely identify tables/files when Qualytics writes metadata for your selected datastore.|
 | 2. | Toggle Button for existing enrichment datastore | Toggle ON to link the source datastore to an existing enrichment datastore, or toggle OFF to link it to a brand new enrichment datastore. |
-| 3. | Name(Required) Give a name for the enrichment datastore |
+| 3. | Name(Required) | Give a name for the enrichment datastore |
 | 4. | Toggle Button for using an existing connection | Toggle ON to reuse credentials from an existing connection, or toggle OFF to create a new enrichment from scratch. |
 | 5. |Connector(Required) | Select a datastore connector as **“BigQuery”** from the dropdown list.|
 
