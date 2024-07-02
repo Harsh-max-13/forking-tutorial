@@ -79,9 +79,6 @@ Provides read access to view table data and metadata.
 
 |REF| READ-ONLY PERMISSIONS| DESCRIPTION|
 |---|----------------------|------------|
-|1. |roles/bigquery.dataViewer| Allows viewing of datasets, tables, and their
-data.|
-|2. |roles/bigquery.jobUser| Enables running of jobs such as queries and
-data loading.|
-|3. | roles/bigquery.readSessionUser| Facilitates the creation of read sessions for
-efficient data retrieval|
+|1. |roles/bigquery.dataViewer| Allows viewing of datasets, tables, and their data.|
+|2. |roles/bigquery.jobUser| Enables running of jobs such as queries and data loading.|
+|3. | roles/bigquery.readSessionUser| Facilitates the creation of read sessions for efficient data retrieval|
