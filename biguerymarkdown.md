@@ -105,3 +105,24 @@ insights. ==
 
 **Step 1:** Log in to your Qualytics account and click on the “Add Source Datastore” button
 located at the top-right corner of the interface.
+
+<img src="image15.png" width=250 height=200>
+
+**Step2:** A modal window- **“AddDatastore”** will appear, providing you with the options to connect a datastore.
+
+<img src="image1.png" width=250 height=200>
+
+| REF. | FIELDS | ACTIONS |
+|------|--------|---------|
+| 1️. | Name(Required) | Specify the name of the datastore (e.g. The specified name will appear on the datastore cards.)
+| 2️. | Toggle Button | Toggle ON to reuse credentials from an existing connection, or toggle OFF to create a new source datastore from scratch.
+| 3. | Connector(Required) | Select “BigQuery” from the dropdown list
+
+<mark> Option I: Create a Source Datastore with a new Connection </mark>
+
+If the toggle for “Use an existing connection” is turned off, then this will prompt you to add
+and configure the source datastore from scratch without using existing connection details.
+
+Step 1: Select the “BigQuery” connector from the dropdown list and add connection details
+such as temp dataset ID, service account key, project ID, and dataset ID.
+
