@@ -208,7 +208,7 @@ scratch without using an existing enrichment datastore and its connection detail
 | 2. | Service Account | Key(Required) | Upload a JSON file that contains the credentials required for accessing BigQuery.|
 | 3. | Project ID(Required) | Enter the Project ID associated with the BigQuery.|
 | 4. | Dataset ID(Required) | Enter the Dataset ID (schema name) associated with the BigQuery.|
-| 5. Teams(Required) | Select one or more teams from the dropdown to associate with this source datastore.|
+| 5. | Teams(Required) | Select one or more teams from the dropdown to associate with this source datastore.|
 
 **Step 2:** Click on the **“Test Connection”** button to verify the selected enrichment datastore
 connection. If the connection is verified, a flash message will indicate that the connection with
